@@ -1,4 +1,4 @@
-package com.prac.ride.entity;
+package com.prac.ride.entity.ride;
 
 import lombok.Data;
 

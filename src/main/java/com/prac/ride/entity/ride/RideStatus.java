@@ -1,4 +1,4 @@
-package com.prac.ride.entity;
+package com.prac.ride.entity.ride;
 
 public enum RideStatus {
     REQUESTED,   // Passenger requested a ride
