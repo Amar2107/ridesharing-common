@@ -5,9 +5,9 @@
   "fields": [
     {"name": "id", "type": "string"},
     {"name": "passengerId", "type": "string"},
-    {"name": "driverId", "type": "string"},
-    {"name": "pickupLocation", "type": "string"},
-    {"name": "dropOffLocation", "type": "string"},
+    {"name": "driverId", "type": ["null", "string"], "default": null },
+    {"name": "pickupLocation", "type": ["null", "string"], "default": null },
+    {"name": "dropOffLocation", "type": ["null", "string"], "default": null },
     {
       "name": "status",
       "type": {
@@ -23,8 +23,8 @@
         ]
       }
     },
-    {"name": "requestTime", "type": "string"},
-    {"name": "startTime", "type": "string"},
-    {"name": "endTime", "type": "string"}
+    {"name": "requestTime", "type": ["null", "string"], "default": null },
+    {"name": "startTime", "type": ["null", "string"], "default": null },
+    {"name": "endTime", "type": ["null", "string"], "default": null }
   ]
 }

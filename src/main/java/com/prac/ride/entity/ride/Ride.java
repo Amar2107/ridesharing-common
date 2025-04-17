@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Ride extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2774709924626412372L;
+  private static final long serialVersionUID = -4923844932874239441L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Ride\",\"namespace\":\"com.prac.ride.entity.ride\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"passengerId\",\"type\":\"string\"},{\"name\":\"driverId\",\"type\":\"string\"},{\"name\":\"pickupLocation\",\"type\":\"string\"},{\"name\":\"dropOffLocation\",\"type\":\"string\"},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"RideStatus\",\"symbols\":[\"REQUESTED\",\"ASSIGNED\",\"ACCEPTED\",\"IN_PROGRESS\",\"COMPLETED\",\"CANCELED\"]}},{\"name\":\"requestTime\",\"type\":\"string\"},{\"name\":\"startTime\",\"type\":\"string\"},{\"name\":\"endTime\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Ride\",\"namespace\":\"com.prac.ride.entity.ride\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"passengerId\",\"type\":\"string\"},{\"name\":\"driverId\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"pickupLocation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"dropOffLocation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"RideStatus\",\"symbols\":[\"REQUESTED\",\"ASSIGNED\",\"ACCEPTED\",\"IN_PROGRESS\",\"COMPLETED\",\"CANCELED\"]}},{\"name\":\"requestTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"endTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -862,19 +862,55 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
 
     out.writeString(this.passengerId);
 
-    out.writeString(this.driverId);
+    if (this.driverId == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.driverId);
+    }
 
-    out.writeString(this.pickupLocation);
+    if (this.pickupLocation == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.pickupLocation);
+    }
 
-    out.writeString(this.dropOffLocation);
+    if (this.dropOffLocation == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.dropOffLocation);
+    }
 
     out.writeEnum(this.status.ordinal());
 
-    out.writeString(this.requestTime);
+    if (this.requestTime == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.requestTime);
+    }
 
-    out.writeString(this.startTime);
+    if (this.startTime == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.startTime);
+    }
 
-    out.writeString(this.endTime);
+    if (this.endTime == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.endTime);
+    }
 
   }
 
@@ -887,19 +923,49 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
 
       this.passengerId = in.readString(this.passengerId instanceof Utf8 ? (Utf8)this.passengerId : null);
 
-      this.driverId = in.readString(this.driverId instanceof Utf8 ? (Utf8)this.driverId : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.driverId = null;
+      } else {
+        this.driverId = in.readString(this.driverId instanceof Utf8 ? (Utf8)this.driverId : null);
+      }
 
-      this.pickupLocation = in.readString(this.pickupLocation instanceof Utf8 ? (Utf8)this.pickupLocation : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.pickupLocation = null;
+      } else {
+        this.pickupLocation = in.readString(this.pickupLocation instanceof Utf8 ? (Utf8)this.pickupLocation : null);
+      }
 
-      this.dropOffLocation = in.readString(this.dropOffLocation instanceof Utf8 ? (Utf8)this.dropOffLocation : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.dropOffLocation = null;
+      } else {
+        this.dropOffLocation = in.readString(this.dropOffLocation instanceof Utf8 ? (Utf8)this.dropOffLocation : null);
+      }
 
       this.status = com.prac.ride.entity.ride.RideStatus.values()[in.readEnum()];
 
-      this.requestTime = in.readString(this.requestTime instanceof Utf8 ? (Utf8)this.requestTime : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.requestTime = null;
+      } else {
+        this.requestTime = in.readString(this.requestTime instanceof Utf8 ? (Utf8)this.requestTime : null);
+      }
 
-      this.startTime = in.readString(this.startTime instanceof Utf8 ? (Utf8)this.startTime : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.startTime = null;
+      } else {
+        this.startTime = in.readString(this.startTime instanceof Utf8 ? (Utf8)this.startTime : null);
+      }
 
-      this.endTime = in.readString(this.endTime instanceof Utf8 ? (Utf8)this.endTime : null);
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.endTime = null;
+      } else {
+        this.endTime = in.readString(this.endTime instanceof Utf8 ? (Utf8)this.endTime : null);
+      }
 
     } else {
       for (int i = 0; i < 9; i++) {
@@ -913,15 +979,30 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
           break;
 
         case 2:
-          this.driverId = in.readString(this.driverId instanceof Utf8 ? (Utf8)this.driverId : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.driverId = null;
+          } else {
+            this.driverId = in.readString(this.driverId instanceof Utf8 ? (Utf8)this.driverId : null);
+          }
           break;
 
         case 3:
-          this.pickupLocation = in.readString(this.pickupLocation instanceof Utf8 ? (Utf8)this.pickupLocation : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.pickupLocation = null;
+          } else {
+            this.pickupLocation = in.readString(this.pickupLocation instanceof Utf8 ? (Utf8)this.pickupLocation : null);
+          }
           break;
 
         case 4:
-          this.dropOffLocation = in.readString(this.dropOffLocation instanceof Utf8 ? (Utf8)this.dropOffLocation : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.dropOffLocation = null;
+          } else {
+            this.dropOffLocation = in.readString(this.dropOffLocation instanceof Utf8 ? (Utf8)this.dropOffLocation : null);
+          }
           break;
 
         case 5:
@@ -929,15 +1010,30 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
           break;
 
         case 6:
-          this.requestTime = in.readString(this.requestTime instanceof Utf8 ? (Utf8)this.requestTime : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.requestTime = null;
+          } else {
+            this.requestTime = in.readString(this.requestTime instanceof Utf8 ? (Utf8)this.requestTime : null);
+          }
           break;
 
         case 7:
-          this.startTime = in.readString(this.startTime instanceof Utf8 ? (Utf8)this.startTime : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.startTime = null;
+          } else {
+            this.startTime = in.readString(this.startTime instanceof Utf8 ? (Utf8)this.startTime : null);
+          }
           break;
 
         case 8:
-          this.endTime = in.readString(this.endTime instanceof Utf8 ? (Utf8)this.endTime : null);
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.endTime = null;
+          } else {
+            this.endTime = in.readString(this.endTime instanceof Utf8 ? (Utf8)this.endTime : null);
+          }
           break;
 
         default:
