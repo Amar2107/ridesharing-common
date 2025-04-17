@@ -25,6 +25,9 @@
     },
     {"name": "requestTime", "type": ["null", "string"], "default": null },
     {"name": "startTime", "type": ["null", "string"], "default": null },
-    {"name": "endTime", "type": ["null", "string"], "default": null }
+    {"name": "endTime", "type": ["null", "string"], "default": null },
+    {"name": "matchedDriverIds", "type": ["null", {"type": "array", "items": "string"}], "default": null},
+    {"name": "cancellationReason", "type": ["null", "string"], "default": null}
+
   ]
 }

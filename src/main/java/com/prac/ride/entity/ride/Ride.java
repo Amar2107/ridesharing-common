@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Ride extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -4923844932874239441L;
+  private static final long serialVersionUID = 744833653266932691L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Ride\",\"namespace\":\"com.prac.ride.entity.ride\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"passengerId\",\"type\":\"string\"},{\"name\":\"driverId\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"pickupLocation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"dropOffLocation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"RideStatus\",\"symbols\":[\"REQUESTED\",\"ASSIGNED\",\"ACCEPTED\",\"IN_PROGRESS\",\"COMPLETED\",\"CANCELED\"]}},{\"name\":\"requestTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"endTime\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Ride\",\"namespace\":\"com.prac.ride.entity.ride\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"passengerId\",\"type\":\"string\"},{\"name\":\"driverId\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"pickupLocation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"dropOffLocation\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"RideStatus\",\"symbols\":[\"REQUESTED\",\"ASSIGNED\",\"ACCEPTED\",\"IN_PROGRESS\",\"COMPLETED\",\"CANCELED\"]}},{\"name\":\"requestTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"startTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"endTime\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"matchedDriverIds\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"default\":null},{\"name\":\"cancellationReason\",\"type\":[\"null\",\"string\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -82,6 +82,8 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
   private java.lang.CharSequence requestTime;
   private java.lang.CharSequence startTime;
   private java.lang.CharSequence endTime;
+  private java.util.List<java.lang.CharSequence> matchedDriverIds;
+  private java.lang.CharSequence cancellationReason;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -101,8 +103,10 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * @param requestTime The new value for requestTime
    * @param startTime The new value for startTime
    * @param endTime The new value for endTime
+   * @param matchedDriverIds The new value for matchedDriverIds
+   * @param cancellationReason The new value for cancellationReason
    */
-  public Ride(java.lang.CharSequence id, java.lang.CharSequence passengerId, java.lang.CharSequence driverId, java.lang.CharSequence pickupLocation, java.lang.CharSequence dropOffLocation, com.prac.ride.entity.ride.RideStatus status, java.lang.CharSequence requestTime, java.lang.CharSequence startTime, java.lang.CharSequence endTime) {
+  public Ride(java.lang.CharSequence id, java.lang.CharSequence passengerId, java.lang.CharSequence driverId, java.lang.CharSequence pickupLocation, java.lang.CharSequence dropOffLocation, com.prac.ride.entity.ride.RideStatus status, java.lang.CharSequence requestTime, java.lang.CharSequence startTime, java.lang.CharSequence endTime, java.util.List<java.lang.CharSequence> matchedDriverIds, java.lang.CharSequence cancellationReason) {
     this.id = id;
     this.passengerId = passengerId;
     this.driverId = driverId;
@@ -112,6 +116,8 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
     this.requestTime = requestTime;
     this.startTime = startTime;
     this.endTime = endTime;
+    this.matchedDriverIds = matchedDriverIds;
+    this.cancellationReason = cancellationReason;
   }
 
   @Override
@@ -133,6 +139,8 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
     case 6: return requestTime;
     case 7: return startTime;
     case 8: return endTime;
+    case 9: return matchedDriverIds;
+    case 10: return cancellationReason;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -151,6 +159,8 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
     case 6: requestTime = (java.lang.CharSequence)value$; break;
     case 7: startTime = (java.lang.CharSequence)value$; break;
     case 8: endTime = (java.lang.CharSequence)value$; break;
+    case 9: matchedDriverIds = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 10: cancellationReason = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -309,6 +319,40 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
+   * Gets the value of the 'matchedDriverIds' field.
+   * @return The value of the 'matchedDriverIds' field.
+   */
+  public java.util.List<java.lang.CharSequence> getMatchedDriverIds() {
+    return matchedDriverIds;
+  }
+
+
+  /**
+   * Sets the value of the 'matchedDriverIds' field.
+   * @param value the value to set.
+   */
+  public void setMatchedDriverIds(java.util.List<java.lang.CharSequence> value) {
+    this.matchedDriverIds = value;
+  }
+
+  /**
+   * Gets the value of the 'cancellationReason' field.
+   * @return The value of the 'cancellationReason' field.
+   */
+  public java.lang.CharSequence getCancellationReason() {
+    return cancellationReason;
+  }
+
+
+  /**
+   * Sets the value of the 'cancellationReason' field.
+   * @param value the value to set.
+   */
+  public void setCancellationReason(java.lang.CharSequence value) {
+    this.cancellationReason = value;
+  }
+
+  /**
    * Creates a new Ride RecordBuilder.
    * @return A new Ride RecordBuilder
    */
@@ -358,6 +402,8 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.CharSequence requestTime;
     private java.lang.CharSequence startTime;
     private java.lang.CharSequence endTime;
+    private java.util.List<java.lang.CharSequence> matchedDriverIds;
+    private java.lang.CharSequence cancellationReason;
 
     /** Creates a new Builder */
     private Builder() {
@@ -406,6 +452,14 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
         this.endTime = data().deepCopy(fields()[8].schema(), other.endTime);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
+      if (isValidValue(fields()[9], other.matchedDriverIds)) {
+        this.matchedDriverIds = data().deepCopy(fields()[9].schema(), other.matchedDriverIds);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
+      }
+      if (isValidValue(fields()[10], other.cancellationReason)) {
+        this.cancellationReason = data().deepCopy(fields()[10].schema(), other.cancellationReason);
+        fieldSetFlags()[10] = other.fieldSetFlags()[10];
+      }
     }
 
     /**
@@ -449,6 +503,14 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       if (isValidValue(fields()[8], other.endTime)) {
         this.endTime = data().deepCopy(fields()[8].schema(), other.endTime);
         fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.matchedDriverIds)) {
+        this.matchedDriverIds = data().deepCopy(fields()[9].schema(), other.matchedDriverIds);
+        fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.cancellationReason)) {
+        this.cancellationReason = data().deepCopy(fields()[10].schema(), other.cancellationReason);
+        fieldSetFlags()[10] = true;
       }
     }
 
@@ -812,6 +874,86 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /**
+      * Gets the value of the 'matchedDriverIds' field.
+      * @return The value.
+      */
+    public java.util.List<java.lang.CharSequence> getMatchedDriverIds() {
+      return matchedDriverIds;
+    }
+
+
+    /**
+      * Sets the value of the 'matchedDriverIds' field.
+      * @param value The value of 'matchedDriverIds'.
+      * @return This builder.
+      */
+    public com.prac.ride.entity.ride.Ride.Builder setMatchedDriverIds(java.util.List<java.lang.CharSequence> value) {
+      validate(fields()[9], value);
+      this.matchedDriverIds = value;
+      fieldSetFlags()[9] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'matchedDriverIds' field has been set.
+      * @return True if the 'matchedDriverIds' field has been set, false otherwise.
+      */
+    public boolean hasMatchedDriverIds() {
+      return fieldSetFlags()[9];
+    }
+
+
+    /**
+      * Clears the value of the 'matchedDriverIds' field.
+      * @return This builder.
+      */
+    public com.prac.ride.entity.ride.Ride.Builder clearMatchedDriverIds() {
+      matchedDriverIds = null;
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'cancellationReason' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getCancellationReason() {
+      return cancellationReason;
+    }
+
+
+    /**
+      * Sets the value of the 'cancellationReason' field.
+      * @param value The value of 'cancellationReason'.
+      * @return This builder.
+      */
+    public com.prac.ride.entity.ride.Ride.Builder setCancellationReason(java.lang.CharSequence value) {
+      validate(fields()[10], value);
+      this.cancellationReason = value;
+      fieldSetFlags()[10] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'cancellationReason' field has been set.
+      * @return True if the 'cancellationReason' field has been set, false otherwise.
+      */
+    public boolean hasCancellationReason() {
+      return fieldSetFlags()[10];
+    }
+
+
+    /**
+      * Clears the value of the 'cancellationReason' field.
+      * @return This builder.
+      */
+    public com.prac.ride.entity.ride.Ride.Builder clearCancellationReason() {
+      cancellationReason = null;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public Ride build() {
@@ -826,6 +968,8 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
         record.requestTime = fieldSetFlags()[6] ? this.requestTime : (java.lang.CharSequence) defaultValue(fields()[6]);
         record.startTime = fieldSetFlags()[7] ? this.startTime : (java.lang.CharSequence) defaultValue(fields()[7]);
         record.endTime = fieldSetFlags()[8] ? this.endTime : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.matchedDriverIds = fieldSetFlags()[9] ? this.matchedDriverIds : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[9]);
+        record.cancellationReason = fieldSetFlags()[10] ? this.cancellationReason : (java.lang.CharSequence) defaultValue(fields()[10]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -912,6 +1056,33 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       out.writeString(this.endTime);
     }
 
+    if (this.matchedDriverIds == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      long size0 = this.matchedDriverIds.size();
+      out.writeArrayStart();
+      out.setItemCount(size0);
+      long actualSize0 = 0;
+      for (java.lang.CharSequence e0: this.matchedDriverIds) {
+        actualSize0++;
+        out.startItem();
+        out.writeString(e0);
+      }
+      out.writeArrayEnd();
+      if (actualSize0 != size0)
+        throw new java.util.ConcurrentModificationException("Array-size written was " + size0 + ", but element count was " + actualSize0 + ".");
+    }
+
+    if (this.cancellationReason == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.cancellationReason);
+    }
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -967,8 +1138,35 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
         this.endTime = in.readString(this.endTime instanceof Utf8 ? (Utf8)this.endTime : null);
       }
 
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.matchedDriverIds = null;
+      } else {
+        long size0 = in.readArrayStart();
+        java.util.List<java.lang.CharSequence> a0 = this.matchedDriverIds;
+        if (a0 == null) {
+          a0 = new SpecificData.Array<java.lang.CharSequence>((int)size0, SCHEMA$.getField("matchedDriverIds").schema().getTypes().get(1));
+          this.matchedDriverIds = a0;
+        } else a0.clear();
+        SpecificData.Array<java.lang.CharSequence> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a0 : null);
+        for ( ; 0 < size0; size0 = in.arrayNext()) {
+          for ( ; size0 != 0; size0--) {
+            java.lang.CharSequence e0 = (ga0 != null ? ga0.peek() : null);
+            e0 = in.readString(e0 instanceof Utf8 ? (Utf8)e0 : null);
+            a0.add(e0);
+          }
+        }
+      }
+
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.cancellationReason = null;
+      } else {
+        this.cancellationReason = in.readString(this.cancellationReason instanceof Utf8 ? (Utf8)this.cancellationReason : null);
+      }
+
     } else {
-      for (int i = 0; i < 9; i++) {
+      for (int i = 0; i < 11; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
@@ -1033,6 +1231,37 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
             this.endTime = null;
           } else {
             this.endTime = in.readString(this.endTime instanceof Utf8 ? (Utf8)this.endTime : null);
+          }
+          break;
+
+        case 9:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.matchedDriverIds = null;
+          } else {
+            long size0 = in.readArrayStart();
+            java.util.List<java.lang.CharSequence> a0 = this.matchedDriverIds;
+            if (a0 == null) {
+              a0 = new SpecificData.Array<java.lang.CharSequence>((int)size0, SCHEMA$.getField("matchedDriverIds").schema().getTypes().get(1));
+              this.matchedDriverIds = a0;
+            } else a0.clear();
+            SpecificData.Array<java.lang.CharSequence> ga0 = (a0 instanceof SpecificData.Array ? (SpecificData.Array<java.lang.CharSequence>)a0 : null);
+            for ( ; 0 < size0; size0 = in.arrayNext()) {
+              for ( ; size0 != 0; size0--) {
+                java.lang.CharSequence e0 = (ga0 != null ? ga0.peek() : null);
+                e0 = in.readString(e0 instanceof Utf8 ? (Utf8)e0 : null);
+                a0.add(e0);
+              }
+            }
+          }
+          break;
+
+        case 10:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.cancellationReason = null;
+          } else {
+            this.cancellationReason = in.readString(this.cancellationReason instanceof Utf8 ? (Utf8)this.cancellationReason : null);
           }
           break;
 
