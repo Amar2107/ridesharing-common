@@ -3,9 +3,9 @@
   "type": "record",
   "name": "Ride",
   "fields": [
-    {"name": "id", "type": "long"},
-    {"name": "passengerId", "type": "long"},
-    {"name": "driverId", "type": "long"},
+    {"name": "id", "type": "string"},
+    {"name": "passengerId", "type": "string"},
+    {"name": "driverId", "type": "string"},
     {"name": "pickupLocation", "type": "string"},
     {"name": "dropOffLocation", "type": "string"},
     {

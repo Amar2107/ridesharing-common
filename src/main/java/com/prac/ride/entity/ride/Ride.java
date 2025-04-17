@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Ride extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8676586058482878558L;
+  private static final long serialVersionUID = -2774709924626412372L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Ride\",\"namespace\":\"com.prac.ride.entity.ride\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"passengerId\",\"type\":\"long\"},{\"name\":\"driverId\",\"type\":\"long\"},{\"name\":\"pickupLocation\",\"type\":\"string\"},{\"name\":\"dropOffLocation\",\"type\":\"string\"},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"RideStatus\",\"symbols\":[\"REQUESTED\",\"ASSIGNED\",\"ACCEPTED\",\"IN_PROGRESS\",\"COMPLETED\",\"CANCELED\"]}},{\"name\":\"requestTime\",\"type\":\"string\"},{\"name\":\"startTime\",\"type\":\"string\"},{\"name\":\"endTime\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Ride\",\"namespace\":\"com.prac.ride.entity.ride\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"passengerId\",\"type\":\"string\"},{\"name\":\"driverId\",\"type\":\"string\"},{\"name\":\"pickupLocation\",\"type\":\"string\"},{\"name\":\"dropOffLocation\",\"type\":\"string\"},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"RideStatus\",\"symbols\":[\"REQUESTED\",\"ASSIGNED\",\"ACCEPTED\",\"IN_PROGRESS\",\"COMPLETED\",\"CANCELED\"]}},{\"name\":\"requestTime\",\"type\":\"string\"},{\"name\":\"startTime\",\"type\":\"string\"},{\"name\":\"endTime\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -73,9 +73,9 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
     return DECODER.decode(b);
   }
 
-  private long id;
-  private long passengerId;
-  private long driverId;
+  private java.lang.CharSequence id;
+  private java.lang.CharSequence passengerId;
+  private java.lang.CharSequence driverId;
   private java.lang.CharSequence pickupLocation;
   private java.lang.CharSequence dropOffLocation;
   private com.prac.ride.entity.ride.RideStatus status;
@@ -102,7 +102,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * @param startTime The new value for startTime
    * @param endTime The new value for endTime
    */
-  public Ride(java.lang.Long id, java.lang.Long passengerId, java.lang.Long driverId, java.lang.CharSequence pickupLocation, java.lang.CharSequence dropOffLocation, com.prac.ride.entity.ride.RideStatus status, java.lang.CharSequence requestTime, java.lang.CharSequence startTime, java.lang.CharSequence endTime) {
+  public Ride(java.lang.CharSequence id, java.lang.CharSequence passengerId, java.lang.CharSequence driverId, java.lang.CharSequence pickupLocation, java.lang.CharSequence dropOffLocation, com.prac.ride.entity.ride.RideStatus status, java.lang.CharSequence requestTime, java.lang.CharSequence startTime, java.lang.CharSequence endTime) {
     this.id = id;
     this.passengerId = passengerId;
     this.driverId = driverId;
@@ -142,9 +142,9 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.Long)value$; break;
-    case 1: passengerId = (java.lang.Long)value$; break;
-    case 2: driverId = (java.lang.Long)value$; break;
+    case 0: id = (java.lang.CharSequence)value$; break;
+    case 1: passengerId = (java.lang.CharSequence)value$; break;
+    case 2: driverId = (java.lang.CharSequence)value$; break;
     case 3: pickupLocation = (java.lang.CharSequence)value$; break;
     case 4: dropOffLocation = (java.lang.CharSequence)value$; break;
     case 5: status = (com.prac.ride.entity.ride.RideStatus)value$; break;
@@ -159,7 +159,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * Gets the value of the 'id' field.
    * @return The value of the 'id' field.
    */
-  public long getId() {
+  public java.lang.CharSequence getId() {
     return id;
   }
 
@@ -168,7 +168,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'id' field.
    * @param value the value to set.
    */
-  public void setId(long value) {
+  public void setId(java.lang.CharSequence value) {
     this.id = value;
   }
 
@@ -176,7 +176,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * Gets the value of the 'passengerId' field.
    * @return The value of the 'passengerId' field.
    */
-  public long getPassengerId() {
+  public java.lang.CharSequence getPassengerId() {
     return passengerId;
   }
 
@@ -185,7 +185,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'passengerId' field.
    * @param value the value to set.
    */
-  public void setPassengerId(long value) {
+  public void setPassengerId(java.lang.CharSequence value) {
     this.passengerId = value;
   }
 
@@ -193,7 +193,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * Gets the value of the 'driverId' field.
    * @return The value of the 'driverId' field.
    */
-  public long getDriverId() {
+  public java.lang.CharSequence getDriverId() {
     return driverId;
   }
 
@@ -202,7 +202,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'driverId' field.
    * @param value the value to set.
    */
-  public void setDriverId(long value) {
+  public void setDriverId(java.lang.CharSequence value) {
     this.driverId = value;
   }
 
@@ -349,9 +349,9 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Ride>
     implements org.apache.avro.data.RecordBuilder<Ride> {
 
-    private long id;
-    private long passengerId;
-    private long driverId;
+    private java.lang.CharSequence id;
+    private java.lang.CharSequence passengerId;
+    private java.lang.CharSequence driverId;
     private java.lang.CharSequence pickupLocation;
     private java.lang.CharSequence dropOffLocation;
     private com.prac.ride.entity.ride.RideStatus status;
@@ -456,7 +456,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * Gets the value of the 'id' field.
       * @return The value.
       */
-    public long getId() {
+    public java.lang.CharSequence getId() {
       return id;
     }
 
@@ -466,7 +466,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public com.prac.ride.entity.ride.Ride.Builder setId(long value) {
+    public com.prac.ride.entity.ride.Ride.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -487,6 +487,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * @return This builder.
       */
     public com.prac.ride.entity.ride.Ride.Builder clearId() {
+      id = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -495,7 +496,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * Gets the value of the 'passengerId' field.
       * @return The value.
       */
-    public long getPassengerId() {
+    public java.lang.CharSequence getPassengerId() {
       return passengerId;
     }
 
@@ -505,7 +506,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'passengerId'.
       * @return This builder.
       */
-    public com.prac.ride.entity.ride.Ride.Builder setPassengerId(long value) {
+    public com.prac.ride.entity.ride.Ride.Builder setPassengerId(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.passengerId = value;
       fieldSetFlags()[1] = true;
@@ -526,6 +527,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * @return This builder.
       */
     public com.prac.ride.entity.ride.Ride.Builder clearPassengerId() {
+      passengerId = null;
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -534,7 +536,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * Gets the value of the 'driverId' field.
       * @return The value.
       */
-    public long getDriverId() {
+    public java.lang.CharSequence getDriverId() {
       return driverId;
     }
 
@@ -544,7 +546,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * @param value The value of 'driverId'.
       * @return This builder.
       */
-    public com.prac.ride.entity.ride.Ride.Builder setDriverId(long value) {
+    public com.prac.ride.entity.ride.Ride.Builder setDriverId(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.driverId = value;
       fieldSetFlags()[2] = true;
@@ -565,6 +567,7 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       * @return This builder.
       */
     public com.prac.ride.entity.ride.Ride.Builder clearDriverId() {
+      driverId = null;
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -814,9 +817,9 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
     public Ride build() {
       try {
         Ride record = new Ride();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.Long) defaultValue(fields()[0]);
-        record.passengerId = fieldSetFlags()[1] ? this.passengerId : (java.lang.Long) defaultValue(fields()[1]);
-        record.driverId = fieldSetFlags()[2] ? this.driverId : (java.lang.Long) defaultValue(fields()[2]);
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.passengerId = fieldSetFlags()[1] ? this.passengerId : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.driverId = fieldSetFlags()[2] ? this.driverId : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.pickupLocation = fieldSetFlags()[3] ? this.pickupLocation : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.dropOffLocation = fieldSetFlags()[4] ? this.dropOffLocation : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.status = fieldSetFlags()[5] ? this.status : (com.prac.ride.entity.ride.RideStatus) defaultValue(fields()[5]);
@@ -855,11 +858,11 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
   @Override public void customEncode(org.apache.avro.io.Encoder out)
     throws java.io.IOException
   {
-    out.writeLong(this.id);
+    out.writeString(this.id);
 
-    out.writeLong(this.passengerId);
+    out.writeString(this.passengerId);
 
-    out.writeLong(this.driverId);
+    out.writeString(this.driverId);
 
     out.writeString(this.pickupLocation);
 
@@ -880,11 +883,11 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.id = in.readLong();
+      this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
 
-      this.passengerId = in.readLong();
+      this.passengerId = in.readString(this.passengerId instanceof Utf8 ? (Utf8)this.passengerId : null);
 
-      this.driverId = in.readLong();
+      this.driverId = in.readString(this.driverId instanceof Utf8 ? (Utf8)this.driverId : null);
 
       this.pickupLocation = in.readString(this.pickupLocation instanceof Utf8 ? (Utf8)this.pickupLocation : null);
 
@@ -902,15 +905,15 @@ public class Ride extends org.apache.avro.specific.SpecificRecordBase implements
       for (int i = 0; i < 9; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.id = in.readLong();
+          this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
           break;
 
         case 1:
-          this.passengerId = in.readLong();
+          this.passengerId = in.readString(this.passengerId instanceof Utf8 ? (Utf8)this.passengerId : null);
           break;
 
         case 2:
-          this.driverId = in.readLong();
+          this.driverId = in.readString(this.driverId instanceof Utf8 ? (Utf8)this.driverId : null);
           break;
 
         case 3:
