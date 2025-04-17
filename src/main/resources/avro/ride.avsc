@@ -1,0 +1,30 @@
+{
+  "namespace": "com.prac.ride.entity.ride",
+  "type": "record",
+  "name": "Ride",
+  "fields": [
+    {"name": "id", "type": "long"},
+    {"name": "passengerId", "type": "long"},
+    {"name": "driverId", "type": "long"},
+    {"name": "pickupLocation", "type": "string"},
+    {"name": "dropOffLocation", "type": "string"},
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "RideStatus",
+        "symbols": [
+          "REQUESTED",
+          "ASSIGNED",
+          "ACCEPTED",
+          "IN_PROGRESS",
+          "COMPLETED",
+          "CANCELED"
+        ]
+      }
+    },
+    {"name": "requestTime", "type": "string"},
+    {"name": "startTime", "type": "string"},
+    {"name": "endTime", "type": "string"}
+  ]
+}
