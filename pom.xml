@@ -6,7 +6,7 @@
  
     <groupId>com.prac.ride_booking</groupId>
     <artifactId>ridesharing-common</artifactId>
-    <version>1.0.14</version>
+    <version>1.0.16</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -24,7 +24,27 @@
     </distributionManagement>
 
 
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>3.3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>7.9.0</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
